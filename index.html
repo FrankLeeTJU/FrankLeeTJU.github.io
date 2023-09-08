@@ -53,6 +53,26 @@ body {
             color: #fff;
             padding: 20px;
         }
+        /* 新的样式规则，用于左侧图片容器 */
+        .left-column {
+            float: left;
+            width: 30%; /* 左侧容器的宽度 */
+            padding: 20px;
+        }
+
+        /* 新的样式规则，用于右侧内容容器 */
+        .right-column {
+            float: right;
+            width: 70%; /* 右侧容器的宽度 */
+            padding: 20px;
+        }
+
+        /* 清除浮动 */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
     </style>
 </head>
 <body>
@@ -70,11 +90,21 @@ body {
         </ul>
     </nav>
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am currently an MEng candidate at TJU, my research interests are mainly in cementitious materials including their durability and modification.</p>
-        </section>
+    <main class="clearfix"> <!-- 使用clearfix清除浮动 -->
+
+        <!-- 左侧容器，包含照片 -->
+        <div class="left-column">
+            <img src="myimage.jpg" alt="Frank Lee's Photo" style="max-width: 100%; height: auto;">
+        </div>
+
+        <!-- 右侧容器，包含 About Me 内容 -->
+        <div class="right-column">
+            <section id="about">
+                <h2>About Me</h2>
+                <p>I am currently an MEng candidate at TJU, my research interests are mainly in cementitious materials including their durability and modification.</p>
+            </section>
+        </div>
+
     </main>
 
     <footer>
