@@ -47,36 +47,30 @@ body {
             margin-bottom: 20px;
         }
 
-        /* Style for the "About Me" section */
-        #about {
-            background-color: #87CEEB;
-            color: #fff;
+        /* 新的样式规则，用于容器 */
+        .content-container {
+            width: 70%; /* 容器的宽度 */
+            margin: 0 auto; /* 居中对齐容器 */
             padding: 20px;
+            display: flex; /* 使用 Flex 布局 */
+            align-items: flex-start; /* 垂直对齐方式 */
         }
-        /* 新的样式规则，用于左侧图片容器 */
+
+        /* 新的样式规则，用于左侧容器 */
         .left-column {
-            float: left;
-            width: 20%; /* 左侧容器的宽度 */
-            padding: 20px;
+            flex: 1; /* 左侧容器占据可用空间的比例 */
+            padding-right: 20px; /* 右边距，用于分隔照片和文本 */
         }
 
-        /* 新的样式规则，用于右侧内容容器 */
+        /* 新的样式规则，用于右侧容器 */
         .right-column {
-            float: right;
-            width: 80%; /* 右侧容器的宽度 */
-            padding: 20px;
+            flex: 2; /* 右侧容器占据可用空间的比例 */
         }
 
-        /* 清除浮动 */
-        .clearfix::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
         /* 新的样式规则，用于照片 */
         .profile-image {
             max-width: 100%; /* 图片最大宽度 */
-            height: 100%; /* 自动调整图片高度 */
+            height: auto; /* 自动调整图片高度 */
         }
     </style>
 </head>
@@ -87,16 +81,15 @@ body {
 
     <nav>
         <ul>
-            <li><a href="index.html">About Me</a></li>
+            <li><a href="#about">About Me</a></li>
             <li><a href="education.html">Education</a></li>
             <li><a href="awards.html">Awards</a></li>
-            <li><a href="research.html">Research</a></li>
+            <li><a href="research.html">Research Interests</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <main class="clearfix"> <!-- 使用clearfix清除浮动 -->
-
+    <main class="content-container">
         <!-- 左侧容器，包含照片 -->
         <div class="left-column">
             <img src="photowithhead.jpg" alt="Frank Lee's Photo" class="profile-image">
@@ -109,7 +102,6 @@ body {
                 <p>I am currently an MEng candidate at TJU, my research interests are mainly in cementitious materials including their durability and modification.</p>
             </section>
         </div>
-
     </main>
 
     <footer>
